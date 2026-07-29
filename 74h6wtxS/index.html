@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>LRD Studio — Traffic &amp; SEO Snapshot, July 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --bg:#F6F4F0; --card:#FFFFFF; --ink:#1A1A18; --dim:#6B6B68; --muted:#8A8579;
+  --line:rgba(26,26,24,0.10); --gold:#C9A96E;
+  --good:#2E7D4F; --warn:#C08A1E; --bad:#B4342F;
+  --accent:#8A6D3B; --track:#E5E0D5;
+  --tipbg:#1A1A18; --tipink:#F6F4F0; --on-fill:#FFFFFF;
+}
+@media (prefers-color-scheme: dark){
+  :root:where(:not([data-theme="light"])){
+    color-scheme: dark;
+    --bg:#141413; --card:#1E1E1C; --ink:#F4F2EE; --dim:#B0ADA4; --muted:#8E8A80;
+    --line:rgba(244,242,238,0.12); --gold:#C9A96E;
+    --good:#4CA372; --warn:#C08A1E; --bad:#D9606E;
+    --accent:#C2A268; --track:#35332E;
+    --tipbg:#F4F2EE; --tipink:#1A1A18; --on-fill:#141413;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --bg:#141413; --card:#1E1E1C; --ink:#F4F2EE; --dim:#B0ADA4; --muted:#8E8A80;
+  --line:rgba(244,242,238,0.12); --gold:#C9A96E;
+  --good:#4CA372; --warn:#C08A1E; --bad:#D9606E;
+  --accent:#C2A268; --track:#35332E;
+  --tipbg:#F4F2EE; --tipink:#1A1A18; --on-fill:#141413;
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  -webkit-font-smoothing:antialiased;}
+.wrap{max-width:1080px;margin:0 auto;padding:48px 24px 72px;}
+
+/* header */
+header{margin-bottom:40px;}
+.eyebrow{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+.eyebrow::before{content:'';width:26px;height:1px;background:var(--gold);}
+h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;
+  font-size:clamp(2.1rem,5vw,3.1rem);line-height:1.06;margin:0 0 8px;letter-spacing:-.01em;}
+h1 em{font-style:italic;color:var(--gold);}
+.sub{color:var(--dim);font-size:.95rem;margin:0;}
+
+/* section */
+section{margin-top:46px;}
+h2{font-family:'Cormorant Garamond',Georgia,serif;font-weight:400;font-size:1.6rem;
+  margin:0 0 4px;letter-spacing:-.01em;}
+.note{font-size:.82rem;color:var(--muted);margin:0 0 20px;}
+
+/* kpi */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:14px;}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:20px 20px 18px;}
+.kpi .lab{font-size:.66rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
+.kpi .val{font-size:2.5rem;font-weight:500;line-height:1;letter-spacing:-.02em;}
+.kpi .dl{margin-top:10px;font-size:.8rem;font-weight:500;display:flex;align-items:center;gap:6px;}
+.up{color:var(--good);} .down{color:var(--bad);}
+.dl .arrow{font-size:.9rem;line-height:1;}
+.dl .yoy{color:var(--muted);font-weight:400;}
+
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:26px 26px 22px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+@media(max-width:760px){.grid2{grid-template-columns:1fr;}}
+
+/* svg chart */
+.chart{width:100%;height:auto;display:block;overflow:visible;}
+.gridline{stroke:var(--line);stroke-width:1;}
+.axlab{fill:var(--muted);font-size:12px;font-family:'DM Sans',sans-serif;}
+.vallab{fill:var(--ink);font-size:15px;font-weight:600;font-family:'DM Sans',sans-serif;}
+.bar{transition:opacity .15s;}
+.bar:hover{opacity:.78;cursor:default;}
+
+/* score rows */
+.srow{display:flex;align-items:center;gap:16px;margin-bottom:15px;}
+.srow:last-child{margin-bottom:0;}
+.sname{width:150px;flex:0 0 150px;font-size:.86rem;color:var(--dim);}
+.strack{flex:1;height:12px;background:var(--track);border-radius:6px;overflow:hidden;}
+.sfill{height:100%;border-radius:6px;}
+.sval{width:74px;flex:0 0 74px;text-align:right;font-size:1.05rem;font-weight:600;font-variant-numeric:tabular-nums;}
+.sgrade{font-size:.7rem;color:var(--muted);font-weight:400;margin-left:5px;}
+
+/* meter */
+.meter{height:34px;background:var(--track);border-radius:8px;overflow:hidden;display:flex;}
+.meter .seg{height:100%;display:flex;align-items:center;padding:0 12px;font-size:.82rem;font-weight:600;white-space:nowrap;}
+.mlegend{display:flex;gap:20px;margin-top:14px;font-size:.8rem;color:var(--dim);flex-wrap:wrap;}
+.mlegend span{display:flex;align-items:center;gap:7px;}
+.dot{width:11px;height:11px;border-radius:3px;flex:0 0 11px;}
+
+/* beforeafter */
+.ba{display:flex;align-items:center;justify-content:center;gap:22px;padding:6px 0 2px;}
+.ba .n{font-size:3rem;font-weight:500;line-height:1;letter-spacing:-.02em;}
+.ba .arw{font-size:1.6rem;color:var(--muted);}
+.ba .cap{font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center;margin-top:8px;}
+
+/* fixes */
+ol.fix{list-style:none;counter-reset:f;margin:0;padding:0;}
+ol.fix li{counter-increment:f;display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);}
+ol.fix li:last-child{border-bottom:none;}
+ol.fix li::before{content:counter(f);font-family:'Cormorant Garamond',serif;font-size:1.5rem;
+  color:var(--gold);flex:0 0 26px;line-height:1;}
+.fx b{display:block;font-size:.97rem;font-weight:600;margin-bottom:3px;}
+.fx span{font-size:.85rem;color:var(--dim);line-height:1.5;}
+
+/* table */
+details{margin-top:38px;}
+summary{cursor:pointer;font-size:.8rem;color:var(--muted);}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.83rem;}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);}
+th{color:var(--muted);font-weight:500;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;}
+td{font-variant-numeric:tabular-nums;}
+footer{margin-top:44px;padding-top:20px;border-top:1px solid var(--line);
+  font-size:.75rem;color:var(--muted);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+
+#tip{position:fixed;pointer-events:none;opacity:0;transition:opacity .12s;
+  background:var(--tipbg);color:var(--tipink);padding:7px 11px;border-radius:6px;
+  font-size:.78rem;font-weight:500;white-space:nowrap;z-index:99;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">LRD Studio &middot; July 2026</div>
+  <h1>Traffic &amp; SEO <em>snapshot.</em></h1>
+  <p class="sub">lrdstudio.ca &middot; Squarespace Analytics, May 1 – Jul 28 2026 &middot; site crawl of all 59 pages</p>
+</header>
+
+<!-- KPIs -->
+<section style="margin-top:0;">
+  <div class="kpis">
+    <div class="kpi">
+      <div class="lab">Visits</div>
+      <div class="val">912</div>
+      <div class="dl up"><span class="arrow">&#9650;</span>31% <span class="yoy">yr/yr</span></div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Unique visitors</div>
+      <div class="val">740</div>
+      <div class="dl up"><span class="arrow">&#9650;</span>26% <span class="yoy">yr/yr</span></div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Pageviews</div>
+      <div class="val">2.4K</div>
+      <div class="dl up"><span class="arrow">&#9650;</span>39% <span class="yoy">yr/yr</span></div>
+    </div>
+    <div class="kpi">
+      <div class="lab">Bounce rate</div>
+      <div class="val">58<span style="font-size:1.4rem;">%</span></div>
+      <div class="dl down"><span class="arrow">&#9650;</span>18% <span class="yoy">yr/yr &mdash; worse</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Monthly visits -->
+<section>
+  <h2>Visits by month</h2>
+  <p class="note">July shown through the 28th &mdash; pacing to finish ahead of June.</p>
+  <div class="card">
+    <svg class="chart" viewBox="0 0 720 288" role="img" aria-label="Visits by month: May 274, June 326, July 312 through the 28th">
+      <line class="gridline" x1="46" y1="30"  x2="700" y2="30"/>
+      <line class="gridline" x1="46" y1="83"  x2="700" y2="83"/>
+      <line class="gridline" x1="46" y1="136" x2="700" y2="136"/>
+      <line class="gridline" x1="46" y1="189" x2="700" y2="189"/>
+      <line class="gridline" x1="46" y1="242" x2="700" y2="242"/>
+      <text class="axlab" x="36" y="34"  text-anchor="end">400</text>
+      <text class="axlab" x="36" y="87"  text-anchor="end">300</text>
+      <text class="axlab" x="36" y="140" text-anchor="end">200</text>
+      <text class="axlab" x="36" y="193" text-anchor="end">100</text>
+      <text class="axlab" x="36" y="246" text-anchor="end">0</text>
+
+      <!-- scale .53 px per visit, baseline y=242 : 274->145.2, 326->172.8, 312->165.4 -->
+      <rect class="bar" data-v="May 2026 — 274 visits" x="106" y="96.8"  width="128" height="145.2" rx="4" fill="var(--accent)"/>
+      <rect class="bar" data-v="June 2026 — 326 visits" x="309" y="69.2" width="128" height="172.8" rx="4" fill="var(--accent)"/>
+      <rect class="bar" data-v="July 1–28 2026 — 312 visits" x="512" y="76.6" width="128" height="165.4" rx="4" fill="var(--accent)"/>
+
+      <text class="vallab" x="170" y="87"  text-anchor="middle">274</text>
+      <text class="vallab" x="373" y="59"  text-anchor="middle">326</text>
+      <text class="vallab" x="576" y="67"  text-anchor="middle">312</text>
+
+      <text class="axlab" x="170" y="266" text-anchor="middle">May</text>
+      <text class="axlab" x="373" y="266" text-anchor="middle">June</text>
+      <text class="axlab" x="576" y="266" text-anchor="middle">July</text>
+    </svg>
+  </div>
+</section>
+
+<!-- SEO scores -->
+<section>
+  <h2>SEO scorecard</h2>
+  <p class="note">Out of 100. Content is the outlier &mdash; and the one with a known cause.</p>
+  <div class="card">
+    <div class="srow">
+      <div class="sname">Technical SEO</div>
+      <div class="strack"><div class="sfill" style="width:88%;background:var(--good)"></div></div>
+      <div class="sval">88<span class="sgrade">A&minus;</span></div>
+    </div>
+    <div class="srow">
+      <div class="sname">Site architecture</div>
+      <div class="strack"><div class="sfill" style="width:62%;background:var(--warn)"></div></div>
+      <div class="sval">62<span class="sgrade">C&minus;</span></div>
+    </div>
+    <div class="srow">
+      <div class="sname">Mobile speed</div>
+      <div class="strack"><div class="sfill" style="width:56%;background:var(--bad)"></div></div>
+      <div class="sval">56<span class="sgrade">D+</span></div>
+    </div>
+    <div class="srow">
+      <div class="sname">Content &amp; keywords</div>
+      <div class="strack"><div class="sfill" style="width:48%;background:var(--bad)"></div></div>
+      <div class="sval">48<span class="sgrade">F</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- Content + speed -->
+<section>
+  <div class="grid2">
+    <div class="card">
+      <h2 style="font-size:1.35rem;">Content Google can see</h2>
+      <p class="note">16 finished pages are switched off.</p>
+      <div class="meter">
+        <div class="seg" style="width:54.3%;background:var(--accent);color:var(--on-fill);">13,632</div>
+        <div class="seg" style="flex:1;color:var(--dim);">11,463 offline</div>
+      </div>
+      <div class="mlegend">
+        <span><i class="dot" style="background:var(--accent)"></i>Live &mdash; 54%</span>
+        <span><i class="dot" style="background:var(--track)"></i>Offline &mdash; 46%</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2 style="font-size:1.35rem;">Load time</h2>
+      <p class="note">Google's threshold for &ldquo;good&rdquo; is 2.5s.</p>
+      <svg class="chart" viewBox="0 0 360 150" role="img" aria-label="Load time: mobile 15.4 seconds, desktop 2.8 seconds, good threshold 2.5 seconds">
+        <!-- scale: 16s = 250px -> 15.625 px/s, x0=96 -->
+        <line class="gridline" x1="135" y1="16" x2="135" y2="122" style="stroke-dasharray:3 3"/>
+        <text class="axlab" x="139" y="136" font-size="11">2.5s target</text>
+
+        <text class="axlab" x="88" y="45" text-anchor="end">Mobile</text>
+        <rect class="bar" data-v="Mobile LCP — 15.4s" x="96" y="31" width="241" height="26" rx="4" fill="var(--bad)"/>
+        <text class="vallab" x="331" y="49" text-anchor="end" fill="var(--on-fill)">15.4s</text>
+
+        <text class="axlab" x="88" y="96" text-anchor="end">Desktop</text>
+        <rect class="bar" data-v="Desktop LCP — 2.8s" x="96" y="82" width="44" height="26" rx="4" fill="var(--warn)"/>
+        <text class="vallab" x="150" y="100">2.8s</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- fixed -->
+<section>
+  <div class="grid2">
+    <div class="card" style="text-align:center;">
+      <h2 style="font-size:1.35rem;">Broken internal links</h2>
+      <div class="ba">
+        <div><div class="n" style="color:var(--bad)">264</div><div class="cap">Before</div></div>
+        <div class="arw">&rarr;</div>
+        <div><div class="n" style="color:var(--good)">1</div><div class="cap">Now</div></div>
+      </div>
+    </div>
+    <div class="card" style="text-align:center;">
+      <h2 style="font-size:1.35rem;">Pages on the site</h2>
+      <div class="ba">
+        <div><div class="n" style="color:var(--accent)">35</div><div class="cap">Live</div></div>
+        <div class="arw">&middot;</div>
+        <div><div class="n" style="color:var(--bad)">24</div><div class="cap">Switched off</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- fixes -->
+<section>
+  <h2>Top three fixes</h2>
+  <p class="note">In order of impact.</p>
+  <div class="card">
+    <ol class="fix">
+      <li><div class="fx"><b>Restore the 16 pages &mdash; rename first</b>
+        <span>Apply the clean address, then switch back on. Returns 11,463 words on keyword-relevant URLs. 2&ndash;3 hours.</span></div></li>
+      <li><div class="fx"><b>Bring back /whistler-interior-designers</b>
+        <span>It was ranking in live search results. Restore it or redirect it &mdash; don't leave it dead.</span></div></li>
+      <li><div class="fx"><b>Fix mobile load time</b>
+        <span>Preload the nav logo and resize the hero images. 15.4s is the likely cause of the rising bounce rate.</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<details>
+  <summary>View the data as a table</summary>
+  <table>
+    <thead><tr><th>Metric</th><th>Value</th><th>Change</th></tr></thead>
+    <tbody>
+      <tr><td>Visits (May 1 – Jul 28)</td><td>912</td><td>+31% yr/yr</td></tr>
+      <tr><td>Unique visitors</td><td>740</td><td>+26% yr/yr</td></tr>
+      <tr><td>Pageviews</td><td>2,400</td><td>+39% yr/yr</td></tr>
+      <tr><td>Bounce rate</td><td>58.43%</td><td>+18% yr/yr (worse)</td></tr>
+      <tr><td>Visits — May</td><td>274</td><td>&mdash;</td></tr>
+      <tr><td>Visits — June</td><td>326</td><td>&mdash;</td></tr>
+      <tr><td>Visits — July (to 28th)</td><td>312</td><td>&mdash;</td></tr>
+      <tr><td>Technical SEO</td><td>88 / 100</td><td>A&minus;</td></tr>
+      <tr><td>Site architecture</td><td>62 / 100</td><td>C&minus;</td></tr>
+      <tr><td>Mobile speed</td><td>56 / 100</td><td>D+</td></tr>
+      <tr><td>Content &amp; keywords</td><td>48 / 100</td><td>F</td></tr>
+      <tr><td>Words live / offline</td><td>13,632 / 11,463</td><td>54% live</td></tr>
+      <tr><td>Load time — mobile / desktop</td><td>15.4s / 2.8s</td><td>target 2.5s</td></tr>
+      <tr><td>Broken internal links</td><td>264 &rarr; 1</td><td>resolved</td></tr>
+      <tr><td>Pages live / switched off</td><td>35 / 24</td><td>&mdash;</td></tr>
+    </tbody>
+  </table>
+</details>
+
+<footer>
+  <span>Prepared by Matt Anthony Photography</span>
+  <span>Confidential &mdash; prepared for LRD Studio</span>
+</footer>
+
+</div>
+<div id="tip"></div>
+<script>
+(function(){
+  var tip=document.getElementById('tip');
+  document.querySelectorAll('.bar[data-v]').forEach(function(el){
+    el.addEventListener('mousemove',function(e){
+      tip.textContent=el.getAttribute('data-v');
+      tip.style.opacity='1';
+      var x=e.clientX+14, y=e.clientY-34;
+      if(x+tip.offsetWidth>window.innerWidth-8){x=e.clientX-tip.offsetWidth-14;}
+      tip.style.left=x+'px'; tip.style.top=y+'px';
+    });
+    el.addEventListener('mouseleave',function(){tip.style.opacity='0';});
+  });
+})();
+</script>
+</body>
+</html>
