@@ -16,6 +16,29 @@
   .hero-meta div { flex: 1 1 42%; }
 }
 #investment { scroll-margin-top: 76px; }
+.ink-photo { position: relative; overflow: hidden; min-height: 78vh; }
+.ink-photo > img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; max-width: none;
+  object-fit: cover; object-position: 68% 42%;
+}
+.ink-shade {
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg, rgba(26,26,24,0.9) 0%, rgba(26,26,24,0.74) 36%, rgba(26,26,24,0.28) 70%, rgba(26,26,24,0.16) 100%);
+}
+.ink-copy { position: relative; z-index: 1; }
+.ink-photo .cap { z-index: 1; }
+@media (max-width: 800px) {
+  .ink-photo { min-height: 0; }
+  .ink-shade {
+    background: linear-gradient(to top, rgba(26,26,24,0.55) 0%, rgba(26,26,24,0.82) 46%, rgba(26,26,24,0.9) 100%);
+  }
+  .ink-photo .cap {
+    position: static;
+    margin-top: 28px;
+    text-shadow: none;
+  }
+}
 </style>
 </head>
 <body>
@@ -32,7 +55,7 @@
   <div class="hero-copy">
     <div class="eyebrow">Photography proposal</div>
     <h1>The Strand, <em>Gabriola</em></h1>
-    <p>1194 The Strand. One full day on the house, half a day of travel each way. The same fee as Salt Spring. The photographs are that house.</p>
+    <p>1194 The Strand. One full day on the house, half a day of travel each way. The same fee as Salt Spring. The photographs are earlier houses.</p>
     <div class="hero-meta">
       <div><strong>Prepared for</strong>Vince Iameo and Ryan Price<br>Architrave</div>
       <div><strong>The house</strong>1194 The Strand<br>Gabriola Island</div>
@@ -48,7 +71,7 @@
     <p>Ryan, thank you for locking October 18 to 24. That window works. The day is not picked yet. You and I choose it inside that block, based on the weather, and I confirm 48 hours out. If the forecast moves the day, the deposit stays with the window.</p>
     <p>The shape is the same as Salt Spring. Half a day from Squamish to Gabriola, a full day on site, half a day back. Horseshoe Bay to Departure Bay, then Nanaimo Harbour to Descanso Bay. The Departure Bay sailing needs a vehicle reservation. I will look at the ferry times and the room with you before anything is booked. Your team books the room and pays for it directly.</p>
     <p>You flagged the north exposure. In this part of October the sun is low, so that face sits in open light. The day still runs long enough for the elevations that take the sun, the interiors, and twilight. I will set the hours against the drawings you sent before the day is locked. I saw the house from the gate in September.</p>
-    <p>The photographs on this page are the Salt Spring house. That is the standard for this one.</p>
+    <p>The photographs on this page are earlier houses. Salt Spring sets the fee. The stair behind the finished set is Johnstone Road, Madeira Park.</p>
   </div>
 </section>
 
@@ -93,16 +116,21 @@
   </div>
 </section>
 
-<section class="ink">
-  <h3>What you leave with</h3>
-  <h2>A finished set, ready to hand off</h2>
-  <p>35+ finished images. Print files and web files, side by side, in a Dropbox folder. Custom crops on request. I keep the copyright. Architrave licenses the set for your website, your marketing, and submissions you control. Use by a designer or a trade routes through me.</p>
-  <div class="nums">
-    <div><strong>35+</strong><span>Finished images</span></div>
-    <div><strong>Drone</strong><span>Included, weather allowing</span></div>
-    <div><strong>10 to 15</strong><span>Business days to deliver</span></div>
-    <div><strong>72 hours</strong><span>Selects, if a deadline needs them</span></div>
+<section class="ink ink-photo">
+  <img src="https://www.mattanthonyphoto.com/media/photos/82c313d448a6-1920-johnstone-road-madeira-park-blackened-steel-stai.webp" alt="Johnstone Road, Madeira Park, blackened steel stair treads">
+  <div class="ink-shade"></div>
+  <div class="ink-copy">
+    <h3>What you leave with</h3>
+    <h2>A finished set, ready to hand off</h2>
+    <p>35+ finished images. Print files and web files, side by side, in a Dropbox folder. Custom crops on request. I keep the copyright. Architrave licenses the set for your website, your marketing, and submissions you control. Use by a designer or a trade routes through me.</p>
+    <div class="nums">
+      <div><strong>35+</strong><span>Finished images</span></div>
+      <div><strong>Drone</strong><span>Included, weather allowing</span></div>
+      <div><strong>10 to 15</strong><span>Business days to deliver</span></div>
+      <div><strong>72 hours</strong><span>Selects, if a deadline needs them</span></div>
+    </div>
   </div>
+  <div class="cap">Johnstone Road, Madeira Park · blackened steel stair</div>
 </section>
 
 <section class="wrap" id="investment">
